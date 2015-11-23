@@ -19,6 +19,15 @@ class Contact
     new_contact = Contact.new(first_name, last_name, options)
     @@contacts << new_contact
   end
+
+  def self.all
+    @@contacts
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   # attr_accessor creates these methods
 
   # def first_name
