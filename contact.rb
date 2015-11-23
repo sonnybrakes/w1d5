@@ -1,11 +1,11 @@
 class Contact
   attr_accessor :first_name, :last_name, :email, :notes
 
-  def initialize(first_name, last_name, email, notes = nil)
-    @first_name = first_name
-    @last_name = last_name
-    @email = email
-    @notes = notes
+  def initialize(options)
+    @first_name = options[:first_name]
+    @last_name = options[:last_name]
+    @email = options[:email]
+    @notes = options[:notes]
   # why initialize? when does initialize get run?
   # initialize gets run on dot new
   # eg.> michel = Contact.new
