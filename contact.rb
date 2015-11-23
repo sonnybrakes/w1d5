@@ -14,6 +14,8 @@ class Contact
 
   def self.create(first_name, last_name, options = {})
     new_contact = Contact.new(first_name, last_name, options)
+    new_contact.id = @@id
+    @@id += 1
     @@contacts << new_contact
   end
   # attr_accessor creates these methods
