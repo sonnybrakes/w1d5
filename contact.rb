@@ -3,17 +3,19 @@ class Contact
   attr_accessor :first_name, :last_name, :email, :notes
 
   @@contacts = []
+  @@id = 1
 
   def initialize(first_name, last_name, options = {})
     @first_name = first_name
     @last_name = last_name
     @email = options[:email]
     @notes = options[:notes]
-  # why initialize? when does initialize get run?
-  # initialize gets run on dot new
-  # eg.> michel = Contact.new
   end
 
+  def self.create(first_name, last_name, options = {})
+    new_contact = Contact.new(first_name, last_name, options)
+    @@contacts << new_contact
+  end
   # attr_accessor creates these methods
 
   # def first_name
