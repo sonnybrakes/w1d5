@@ -7,3 +7,5 @@ then before we write any of the code, what are going to be the responsibilities 
 let's say we have five attributes: id, first name, last name, email, and a note about each user.  so how are we going to set up those attributes for this thing?  i heard a couple of people say initialize. we can do initialize, sure, right now if we do new_contact = Contact.new that'll work, right?  we have a class, that's great.  
 
 we want to be able to store those five attributes in this object.  so how are we going to do that?   so we're going to make an initialize method is what we're saying.  
+
+okay so let's set up the contact.  we'll forget about the id for now.  first_name, last_name, email, and note.  we're programming iteratively now, we don't need the final, final solution, we can change things as we go along.  we're just going to keep it simple for now. so now when we want to make a new_contact we need to pass these attributes in.  
