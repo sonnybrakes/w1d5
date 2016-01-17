@@ -8,4 +8,8 @@ let's say we have five attributes: id, first name, last name, email, and a note 
 
 we want to be able to store those five attributes in this object.  so how are we going to do that?   so we're going to make an initialize method is what we're saying.  
 
-okay so let's set up the contact.  we'll forget about the id for now.  first_name, last_name, email, and note.  we're programming iteratively now, we don't need the final, final solution, we can change things as we go along.  we're just going to keep it simple for now. so now when we want to make a new_contact we need to pass these attributes in.  
+okay so let's set up the contact.  we'll forget about the id for now.  first_name, last_name, email, and note.  we're programming iteratively now, we don't need the final, final solution, we can change things as we go along.  we're just going to keep it simple for now. so now when we want to make a new_contact we need to pass these attributes in. we aren't storing the information yet.  
+
+we are going to progress iteratively taking each step without getting ahead of ourselves.  each step needs to be understood thoroughly and working as expected before we continue.  this is the same approach we'll take with testing.  we'll write and test small pieces of code before we move on with the next piece of code.  
+
+so we have this initialize method and we can pass these attributes in, but they're not being saved so let's actually save them.  so we're going to save them as instance variables @first_name = first_name, @last_name = last_name, @email = email, @note = note.  each one of these fields will be saved to an instance variable so that the Contact will remember those values.  so now we can create a new Contact.  
