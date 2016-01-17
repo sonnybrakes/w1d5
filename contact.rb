@@ -1,40 +1,5 @@
+# so what we're going to do is, we want to approach this in an object oriented way, so first we'll make a file and call it contact.rb. so the first step, we're going to make a contact class because what we want to do is we want to represent the idea of a contact in our application. so that's the first thing that we need to kind of wrap our minds around of. every application we're going to build from this point forward is going to be object oriented so we need to think in terms of objects, rather than functions or methods or anything like that. we need to build out objects that represent what it is that we want them to do.
+# the next thing that we need to do and it's something that i'll repeat, is that what your goal is   when your building out a class or an object is you need to keep that object like you have to have a crystaline focus on what the responsibilities of each object in the system are and you don't want things to cross over you don't want responsibilities to leak into a class where it's doing something that it wasn't intended to do. so if i make a contact class, let's call it Contact
 class Contact
-  attr_reader :id
-  attr_accessor :first_name, :last_name, :email, :notes
-
-  @@contacts = []
-  @@id = 1
-
-  def initialize(first_name, last_name, options = {})
-    @id = @@id
-    @first_name = first_name
-    @last_name = last_name
-    @email = options[:email]
-    @notes = options[:notes]
-
-    @@id += 1
-  end
-
-  def self.create(first_name, last_name, options = {})
-    new_contact = Contact.new(first_name, last_name, options)
-    @@contacts << new_contact
-  end
-
-  def self.all
-    @@contacts
-  end
-
-  def full_name
-    "#{first_name} #{last_name}"
-  end
-
-  # attr_accessor creates these methods
-
-  # def first_name
-  #   @first_name
-  # end
-
-  # def first_name=(new_first_name)
-  #   @first_name = new_first_name
-  # end
 end
+# then before
