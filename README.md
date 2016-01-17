@@ -25,3 +25,5 @@ attribute accessor, attr_accessor, and what does it do?  attr_accessor creates t
 # attr_accessor
 
 as a review let's type out one of these getters and setters methods for the first name.  so what is that going to look like? define first_name to define the getter to return an instance variable.  all we want to do is return the value stored in the @first_name instance variable.  that's what we're doing, we're reading from that variable.  the last line of execution is of our method is the return value.  so what about the the setter?  what does that look like?  
+
+the getter and setter methods are replaced using the attr_accessor method.  when we use attr_accessor the getter and setter are written out for us inside the method, this saves us a lot of time.  
