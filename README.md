@@ -13,3 +13,11 @@ okay so let's set up the contact.  we'll forget about the id for now.  first_nam
 we are going to progress iteratively taking each step without getting ahead of ourselves.  each step needs to be understood thoroughly and working as expected before we continue.  this is the same approach we'll take with testing.  we'll write and test small pieces of code before we move on with the next piece of code.  
 
 so we have this initialize method and we can pass these attributes in, but they're not being saved so let's actually save them.  so we're going to save them as instance variables @first_name = first_name, @last_name = last_name, @email = email, @note = note.  each one of these fields will be saved to an instance variable so that the Contact will remember those values.  so now we can create a new Contact.  
+
+let's try it out.  this is a key important thing to remember and to note.  notice that we wrote a little bit of code and then we want to test that code to ensure it does what we intend it to do.  to do that we go into irb.  whenever you're making a new class, a new object, we want to try it out incrementally as we go along, we don't want to wait until we've written many lines of code to try it for the first time, it's not going to be the time to find bugs.  just write a little bit of code then test it.  this is how we figure out how our code works.  it's worth trying it out whenever you make a change.  
+
+so let's load it up in irb and see if we can make a new contact.  this is how you'll resolve any issues such as typos, etc.  it's worth trying it out.  
+
+and it works, we can create a new contact, we can call the .class method on our new contact, but we can't access any of the instance variables.  so maybe that's the next thing we'll want to resolve.   so how do we do that?  
+
+attribute accessor, attr_accessor, and what does it do?  attr_accessor creates the getter and setter methods.  
