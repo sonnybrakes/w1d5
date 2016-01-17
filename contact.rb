@@ -2,4 +2,7 @@
 # the next thing that we need to do and it's something that i'll repeat, is that what your goal is   when your building out a class or an object is you need to keep that object like you have to have a crystaline focus on what the responsibilities of each object in the system are and you don't want things to cross over you don't want responsibilities to leak into a class where it's doing something that it wasn't intended to do. so if i make a contact class, let's call it Contact
 class Contact
 end
-# then before
+
+new_contact = Contact.new
+# then before we write any of the code, what are going to be the responsibilities of the Contact class? store the attributes of a Contact, definitely, that's the main responsibility of this Contact class. so let's set that up.
+# let's say we have five attributes: id, first name, last name, email, and a note about each user. so how are we going to set up those attributes for this thing? i heard a couple of people say initialize. we can do initialize, sure, right now if we do new_contact = Contact.new that'll work, right? we have a class, that's great.
