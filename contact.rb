@@ -9,7 +9,15 @@ class Contact
     @email = email
     @note = note
   end
-  
+
+  def first_name
+    @first_name = first_name
+  end
+
+  def first_name=(new_first_name)
+    @first_name = new_first_name
+  end
+
 end
 
 new_contact = Contact.new("Michel", "Frechette", "mifrec@hotmail.com", "Swell fella")
@@ -23,3 +31,4 @@ new_contact = Contact.new("Michel", "Frechette", "mifrec@hotmail.com", "Swell fe
 # so let's load it up in irb and see if we can make a new contact. this is how you'll resolve any issues such as typos, etc. it's worth trying it out.
 # and it works, we can create a new contact, we can call the .class method on our new contact, but we can't access any of the instance variables. so maybe that's the next thing we'll want to resolve. so how do we do that?
 # attribute accessor, attr_accessor, and what does it do? attr_accessor creates the getter and setter methods.
+# as a review let's type out one of these getters and setters methods for the first name. so what is that going to look like? define first_name to define the getter to return an instance variable. all we want to do is return the value stored in the @first_name instance variable. that's what we're doing, we're reading from that variable. the last line of execution is of our method is the return value. so what about the the setter? what does that look like?
