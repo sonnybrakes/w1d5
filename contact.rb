@@ -1,13 +1,15 @@
-# so what we're going to do is, we want to approach this in an object oriented way, so first we'll make a file and call it contact.rb. so the first step, we're going to make a contact class because what we want to do is we want to represent the idea of a contact in our application. so that's the first thing that we need to kind of wrap our minds around of. every application we're going to build from this point forward is going to be object oriented so we need to think in terms of objects, rather than functions or methods or anything like that. we need to build out objects that represent what it is that we want them to do.
-# the next thing that we need to do and it's something that i'll repeat, is that what your goal is   when your building out a class or an object is you need to keep that object like you have to have a crystaline focus on what the responsibilities of each object in the system are and you don't want things to cross over you don't want responsibilities to leak into a class where it's doing something that it wasn't intended to do. so if i make a contact class, let's call it Contact
 class Contact
   attr_accessor :first_name, :last_name, :email, :note
 
-  def initialize(first_name, last_name, option = {})
+  def initialize(first_name, last_name, options = {})
     @first_name = first_name
     @last_name = last_name
     @email = options[:email]
     @note = options[:note]
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 
   # getter
@@ -22,6 +24,7 @@ class Contact
 end
 
 # new_contact = Contact.new("Michel", "Frechette", "mifrec@hotmail.com", "Swell fella")
+# new contact = Contact.new("Michel", "Frechette", { email: "mifrec@hotmail.com", note: "Swell fella"})
 # then before we write any of the code, what are going to be the responsibilities of the Contact class? store the attributes of a Contact, definitely, that's the main responsibility of this Contact class. so let's set that up.
 # let's say we have five attributes: id, first name, last name, email, and a note about each user. so how are we going to set up those attributes for this thing? i heard a couple of people say initialize. we can do initialize, sure, right now if we do new_contact = Contact.new that'll work, right? we have a class, that's great.
 # we want to be able to store those five attributes in this object. so how are we going to do that? so we're going to make an initialize method is what we're saying.
@@ -44,3 +47,7 @@ end
 # so we could have replaced all four, but now we actually now have it so that we must pass in the  first_name and last_name and optionally we can pass in the email and note.
 # we'll see this pattern very frequently. this pattern comes up quite a lot in ruby in places where it doesn't look right. if we have a method that takes more than three arguments usually that's something weird going on, right? and usually there's a way we can transform it into something that takes one argument that's a hash of key value pairs.
 # we don't always want to replace our arguments with hashes, sometimes there are required arguments where an object really can't do its job unless we pass the information and we want those to be manditory. we need to enforce that information to be passed through.
+# we want to have a method that can return the full name for this contact rather than just the first name or last name. let's add one more method, we'll call it full_name. it'll return a string and print out the first_name and a space and then the last_name.
+# now when we use Contact.new to create a new contact we must pass at least 2 values and we can add the email after the fact.
+#17:40
+# now when we load the program a create a Contact.new we need to pass in two for sure and an optional third piece of information. we can't pass less than two or more than three. it must be two or three things. the thrid must be a hash though. so let's make a new contact. so we pass the first two and once created we can add the email and the note unless we pass a hash as the third item of information when we created our new contact. so how do we write the hash? we use curly braces and inside we'll pass the key value pairs: { email: "mifrec@hotmail.com", note: "Swell fella"}
